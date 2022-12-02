@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register Form</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/userstyle/confirmCp.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1> Get Meat</h1>
+        <div class="lr">
+            <!-- <h2 class="login">Log In</h2> -->
+            <h2 class="register">Reset Password</h2>
+        </div>
+
+    </div>
+
+    <div class="bg">
+
+
+        <!-- <button class="btn">click me</button> -->
+        <div class="form-box">
+            <div id="js">
+                <p id="jspara">Fill the required fields
+
+                </p> <button onclick="closejavas();" class="close"><span></span><span></span></button>
+
+            </div>
+            <% if(success && success.length) {%>
+                <div id="ns">
+                    <p>
+                        <%= success %>
+                    </p>
+                    <button onclick="closebtn();" class="close"><span></span><span></span></button>
+
+                </div>
+                <% } %>
+                    <% if(error && error.length) {%>
+                        <div id="ns">
+                            <p>
+                                <%= error %>
+                            </p>
+                            <button onclick="closebtn();" class="close"><span></span><span></span></button>
+
+                        </div>
+                        <% } %>
+
+                            <div id="cp">
+                                Otp Send to your Email
+
+                                <p>
+                                    <%= username %>
+
+                                </p>
+                                <!-- <button onclick="closejavas();" class="close"><span></span><span></span></button> -->
+
+                            </div>
+
+                            <form action="/confirmCp" method="POST" id="myformlogin">
+                                <div class="email">
+                                    <span>Otp<p id="star1">*</p></span>
+                                    <input type="text" name="otp" required id="username">
+                                </div>
+
+
+                                <!-- <div class="password">
+                                    <span>Password<p id="star3">*</p></span>
+                                    <input type="password" id="password" required title="Password Must be 6 or greater"
+                                        name="password">
+                                </div> -->
+
+                                <div class="register-cancel">
+                                    <a href="/changePassword ">Cancel</a>
+                                    <!-- <button>Register</button> -->
+                                    <a class="button" onclick="login_form()">Confirm</a>
+                                </div>
+                            </form>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src=" javascripts/confirmCp.js"></script>
+
+</body>
+
+</html>

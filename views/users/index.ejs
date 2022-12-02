@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register Form</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/userstyle/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1> Get Meat</h1>
+        <div class="lr">
+            <!-- <h2 class="login">Log In</h2> -->
+            <h2 class="register">Register</h2>
+        </div>
+
+    </div>
+
+    <div class="bg">
+
+
+        <!-- <button class="btn">click me</button> -->
+        <div class="form-box">
+            <div id="js">
+                <p id="jspara">Fill the required fields</p> <button onclick="closejs()"
+                    class="close"><span></span><span></span></button>
+
+            </div>
+            <% if(success && success.length) {%>
+                <div id="ns">
+                    <p>
+                        <%= success %>
+                    </p> <button onclick="closebtn();" class="close"><span></span><span></span></button>
+
+                </div>
+                <% } %>
+                    <form action="/signUp" method="POST" id="myform">
+                        <div class="email">
+                            <span>Email<p id="star1">*</p></span>
+                            <input type="email" name="username" required id="username">
+                        </div>
+                        <div class="name">
+                            <span>Name<p id="star2">*</p></span>
+                            <input type="text" name="name" required id="name">
+                        </div>
+
+                        <div class="password">
+                            <span>Password<p id="star3">*</p></span>
+                            <input type="password" id="password" required title="Password Must be 6 or greater"
+                                name="password">
+                        </div>
+                        <div class="confirmPassword">
+                            <span>Confirm Password<p id="star4">*</p></span>
+                            <input type="password" id="confirmpassword" required name="confirmpassword">
+                        </div>
+                        <div class="register-cancel">
+                            <a href="<%= redirectUrl %> ">Cancel</a>
+                            <!-- <button>Register</button> -->
+                            <a class="button" onclick="submit_form()">Register</a>
+                        </div>
+                    </form>
+                    <div class="border"></div>
+                    <div class="google">
+                        <p>Or Register With</p>
+                        <a href="/auth/google">Google</a>
+                    </div>
+                    <div class="log">
+                        <p>Having an account ? </p>
+                        <a href="/login">Login</a>
+
+                    </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src=" javascripts/main.js"></script>
+
+</body>
+
+</html>

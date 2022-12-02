@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index/address.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h1> Get Meat</h1>
+            <h3>Shipping Address</h3>
+        </div>
+        <div class="form">
+            <form action="/address" method="POST">
+                <div class="name">
+                    <div class="firstName">
+                        <span>First Name</span>
+                        <input type="text" name="firstName" id="first">
+                    </div>
+                    <div class="lastName">
+                        <span>Last Name</span>
+                        <input type="text" name="lastName" id="last">
+                    </div>
+                </div>
+                <div class="address">
+                    <span>Address</span>
+                    <input type="text" name="address">
+                </div>
+                <div class="state-zip">
+                    <div class="state">
+                        <span>City</span>
+                        <input type="text" name="city" id="">
+                    </div>
+                    <div class="zipcode">
+                        <span>Pin-code</span>
+                        <input type="text" name="zipCode" id="">
+                    </div>
+                </div>
+                <div class="country-landmark">
+                    <div class="country">
+                        <span>State</span>
+                        <input type="text" name="state" id="">
+                    </div>
+                    <div class="landmark">
+                        <span>Land mark</span>
+                        <input type="text" name="landMark" id="">
+                    </div>
+                </div>
+                <div class="submit-cancel">
+                    <a href="/">Cancel</a>
+                    <!-- <a onclick=" history.back()">Cancel</a> -->
+                    <button>
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+
+
+    </nav>
+</body>
+
+</html>

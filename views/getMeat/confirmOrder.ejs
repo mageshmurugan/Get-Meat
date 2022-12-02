@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register Form</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/detailstyle/confirmOrder.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1> Get Meat</h1>
+        <div class="lr">
+            <!-- <h2 class="login">Log In</h2> -->
+            <h2 class="register">Order Details</h2>
+        </div>
+
+    </div>
+
+    <div class="bg">
+
+
+        <!-- <button class="btn">click me</button> -->
+        <div class="form-box">
+            <div id="js">
+                <p id="jspara">Fill the required fields
+
+                </p> <button onclick="closejavas();" class="close"><span></span><span></span></button>
+
+            </div>
+            <% if(success && success.length) {%>
+                <div id="ns">
+                    <p>
+                        <%= success %>
+                    </p>
+                    <button onclick="closebtn();" class="close"><span></span><span></span></button>
+
+                </div>
+                <% } %>
+                    <% if(error && error.length) {%>
+                        <div id="ns">
+                            <p>
+                                <%= error %>
+                            </p>
+                            <button onclick="closebtn();" class="close"><span></span><span></span></button>
+
+                        </div>
+                        <% } %>
+
+
+
+                            <form action="/confirmCp" method="POST" id="myformlogin">
+                                <% let i=1; %>
+                                    <% for(let address of add){ %>
+
+                                        <label class="label">
+                                            <div class="label-input">
+                                                <input type="radio" name="address" value="<%= i %>">
+
+                                                <span class="checkmark"></span>
+                                            </div>
+                                            <div class="label-address">
+                                                <div class="label-address-city">
+                                                    <p class="label-address-city-1">
+                                                        <%= address.city %>
+                                                    </p>
+                                                    <p class="label-address-city-2"></p>
+
+                                                </div>
+                                                <p class="label-address-add">
+                                                    <% const m=address.address.split(''); %>
+                                                        <%const mage=m.slice(0, 40);%>
+                                                            <% const mag=mage.join('') + `..`; %>
+                                                                <%= mag %>
+                                                </p>
+                                            </div>
+
+                                        </label>
+                                        <% i=i+1 %>
+
+                                            <% } %>
+                            </form>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src=" javascripts/confirmOrder.js"></script>
+
+</body>
+
+</html>
