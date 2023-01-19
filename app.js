@@ -41,7 +41,7 @@ db.once("open", () => {
     console.log("Database connected");
 });
 
-app.engine('ejs', ejsMate)
+// app.engine('ejs', ejsMate)
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 
@@ -106,6 +106,7 @@ app.use('/', detailRoutes)
 
 
 app.get('/', (req, res) => {
+
     res.render('getMeat/home')
 })
 app.post('/', async (req, res) => {
